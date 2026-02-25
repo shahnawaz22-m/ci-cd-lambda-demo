@@ -33,6 +33,6 @@ jobs:
     steps:
       - name: Invoke Lambda Endpoint
         run: |
-          curl -X POST https://webhook.site/https://webhook.site/fe8a0a6c-34f7-4e93-96cf-1e2d9afbbc99 \
+          curl -X POST https://webhook.site/fe8a0a6c-34f7-4e93-96cf-1e2d9afbbc99 \
           -H "Content-Type: application/json" \
           -d '{"message":"Deployment Successful"}'
