@@ -26,13 +26,13 @@ jobs:
       - name: Push Image
         run: docker push ${{ secrets.DOCKER_USERNAME }}/lambda-demo:latest
 
-  notify:
+   notify:
     needs: build
     runs-on: ubuntu-latest
 
     steps:
-      - name: Invoke Lambda Endpoint
+      - name: Send Notification
         run: |
-          curl -X POST https://webhook.site/fe8a0a6c-34f7-4e93-96cf-1e2d9afbbc99 \
+          curl -X POST 	https://webhook.site/fe8a0a6c-34f7-4e93-96cf-1e2d9afbbc99
           -H "Content-Type: application/json" \
-          -d '{"message":"Deployment Successful"}'
+          -d '{"status":"Deployment Successful"}'
